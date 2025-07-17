@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- Preload images for better performance -->
+    <link rel="preload" as="image" href="buildincollege.png"/>
+    <link rel="preload" as="image" href="logos/firecrawl.jpg"/>
+    <link rel="preload" as="image" href="logos/framer.svg"/>
+    <link rel="preload" as="image" href="logos/anthropic-small.png"/>
+    <link rel="preload" as="image" href="logos/rocketship-icon.png"/>
+    <link rel="preload" as="image" href="logos/openai.webp"/>
+    <link rel="preload" as="image" href="logos/cursor.jpeg"/>
+    <link rel="preload" as="image" href="logos/google.jpeg"/>
+    <link rel="preload" as="image" href="logos/screenstudio.jpeg"/>
+    <link rel="preload" as="image" href="logos/notion.png"/>
+    <link rel="preload" as="image" href="logos/figma.avif"/>
+    <link rel="preload" as="image" href="logos/name.webp"/>
+    <link rel="preload" as="image" href="logos/namecheap.svg"/>
+    <link rel="preload" as="image" href="logos/heroku.webp"/>
+    <link rel="preload" as="image" href="logos/perplexity.png"/>
+    <link rel="preload" as="image" href="logos/microsoft.webp"/>
+    <link rel="preload" as="image" href="logos/github.png"/>
+    <link rel="preload" as="image" href="logos/digitalocean.png"/>
+    <link rel="preload" as="image" href="logos/amazon-aws.png"/>
+    <link rel="preload" as="image" href="logos/elevenlabs.png"/>
+    <link rel="preload" as="image" href="logos/zfellows.jpeg"/>
+    <link rel="preload" as="image" href="logos/neo.svg"/>
+    <link rel="preload" as="image" href="logos/afore.jpeg"/>
+    <link rel="preload" as="image" href="logos/superteam.jpg"/>
+
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Free Stuff for College Builders</title>
+    <meta name="description" content="Free Stuff for College Builders"/>
+    <link rel="icon" href="buildincollege.png"/>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Header Section -->
+    <header class="border-b">
+        <nav class="max-w-6xl mx-auto px-4 h-12 flex items-center justify-between">
+            <a class="flex items-center gap-2" href="index.html">
+                <img src="buildincollege.png" alt="Build for University Logo" class="w-8 h-8 rounded-md"/>
+                <span class="font-semibold text-base">Build for University</span>
+            </a>
+            <a class="px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors" href="about.html">About</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="flex-1">
+        <div class="p-8 max-w-6xl mx-auto">
+            <h1 class="text-3xl font-semibold mb-8">Free Stuff for College Builders</h1>
+            <!-- Filter Buttons -->
+            <div class="mb-6">
+                <div class="flex gap-2 p-1 bg-muted rounded-lg w-fit">
+                    <button class="px-4 py-2 text-sm font-medium rounded-md transition-colors bg-background text-foreground shadow-sm">All</button>
+                    <!--<button class="px-4 py-2 text-sm font-medium rounded-md transition-colors text-muted-foreground hover:text-foreground">Free Stuff</button>
+                    <button class="px-4 py-2 text-sm font-medium rounded-md transition-colors text-muted-foreground hover:text-foreground">Fellowships</button> -->
+                </div>
+            </div>
+
+            <!-- Resources Table -->
+            <div>
+                <div class="bg-background">
+                    <div class="relative w-full overflow-auto">
+                        <table class="w-full caption-bottom text-sm">
+                            <thead>
+                                <tr class="hover:bg-transparent">
+                                    <th class="h-12 px-3 text-left align-middle font-medium text-muted-foreground">Resource</th>
+                                    <th class="h-12 px-3 text-left align-middle font-medium text-muted-foreground">Value</th>
+                                    <th class="h-12 px-3 text-left align-middle font-medium text-muted-foreground">Tags</th>
+                                    <th class="h-12 px-3 text-left align-middle font-medium text-muted-foreground">Description</th>
+                                    <th class="h-12 px-3 text-left align-middle font-medium text-muted-foreground"></th>
+                                </tr>
+                            </thead>
+                            <tbody class="[&amp;_tr:last-child]:border-0">
+                                <!-- Table Row 1: Firecrawl -->
+                                <tr class="border-b border-border transition-colors hover:bg-muted/50">
+                                    <td class="p-3 align-middle">
+                                        <div class="flex items-center gap-3">
+                                            <img class="rounded-md object-contain w-10 h-10" src="logos/firecrawl.jpg" width="40" height="40" alt="Firecrawl logo"/>
+                                            <a href="https://www.firecrawl.dev/student-program" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Firecrawl</a>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle">$100+</td>
+                                    <td class="p-3 align-middle">
+                                        <div class="flex gap-2 flex-wrap">
+                                            <span class="px-2 py-1 bg-yellow-200 text-yellow-800 rounded-md text-xs">NEW</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">API Credits</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">AI</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Web Scraping</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle max-w-md">20k free credits and full API access with educational email</td>
+                                    <td class="p-3 align-middle whitespace-nowrap">
+                                        <a href="https://www.firecrawl.dev/student-program" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-1.5 text-xs font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 whitespace-nowrap">Apply Now</a>
+                                    </td>
+                                </tr>
+                                <!-- Table Row 2: Free Framer Pro -->
+                                <tr class="border-b border-border transition-colors hover:bg-muted/50">
+                                    <td class="p-3 align-middle">
+                                        <div class="flex items-center gap-3">
+                                            <img class="rounded-md object-contain w-10 h-10" src="logos/framer.svg" width="40" height="40" alt="Free Framer Pro logo"/>
+                                            <a href="https://www.framer.com/students/?dub_id=mXpTb4ulA4qL1oH1#signup" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Free Framer Pro</a>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle">$180</td>
+                                    <td class="p-3 align-middle">
+                                        <div class="flex gap-2 flex-wrap">
+                                            <span class="px-2 py-1 bg-yellow-200 text-yellow-800 rounded-md text-xs">NEW</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Design</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Web Development</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Productivity</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle max-w-md">Framer is free for students! Just use your school email</td>
+                                    <td class="p-3 align-middle whitespace-nowrap">
+                                        <a href="https://www.framer.com/students/?dub_id=mXpTb4ulA4qL1oH1#signup" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-1.5 text-xs font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 whitespace-nowrap">Apply Now</a>
+                                    </td>
+                                </tr>
+                                <!-- Table Row 3: Claude Credits -->
+                                <tr class="border-b border-border transition-colors hover:bg-muted/50">
+                                    <td class="p-3 align-middle">
+                                        <div class="flex items-center gap-3">
+                                            <img class="rounded-md object-contain w-8 h-8" src="logos/anthropic-small.png" width="32" height="32" alt="Claude Credits logo"/>
+                                            <a href="https://www.anthropic.com/contact-sales/for-student-builders" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Claude Credits</a>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle">$50</td>
+                                    <td class="p-3 align-middle">
+                                        <div class="flex gap-2 flex-wrap">
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">API Credits</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">AI</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle max-w-md"></td>
+                                    <td class="p-3 align-middle whitespace-nowrap">
+                                        <a href="https://www.anthropic.com/contact-sales/for-student-builders" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-1.5 text-xs font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 whitespace-nowrap">Apply Now</a>
+                                    </td>
+                                </tr>
+                                <!-- Table Row 4: Free Landing Page Builder -->
+                                <tr class="border-b border-border transition-colors hover:bg-muted/50">
+                                    <td class="p-3 align-middle">
+                                        <div class="flex items-center gap-3">
+                                            <img class="rounded-md object-contain w-10 h-10" src="logos/rocketship-icon.png" width="40" height="40" alt="Free Landing Page Builder logo"/>
+                                            <a href="https://www.landingbuilder.live/" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Free Landing Page Builder</a>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle"></td>
+                                    <td class="p-3 align-middle">
+                                        <div class="flex gap-2 flex-wrap">
+                                            <span class="px-2 py-1 bg-yellow-200 text-yellow-800 rounded-md text-xs">NEW</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Web Infrastructure</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Startups</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle max-w-md">Free landing page builder :)</td>
+                                    <td class="p-3 align-middle whitespace-nowrap">
+                                        <a href="https://www.landingbuilder.live/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-1.5 text-xs font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 whitespace-nowrap">Apply Now</a>
+                                    </td>
+                                </tr>
+                                <!-- Table Row 5: OpenAI Credits -->
+                                <tr class="border-b border-border transition-colors hover:bg-muted/50">
+                                    <td class="p-3 align-middle">
+                                        <div class="flex items-center gap-3">
+                                            <img class="rounded-md object-contain w-10 h-10" src="logos/openai.webp" width="40" height="40" alt="OpenAI Credits logo"/>
+                                            <a href="https://www.microsoft.com/en-us/startups/ai" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">OpenAI Credits</a>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle">$1000</td>
+                                    <td class="p-3 align-middle">
+                                        <div class="flex gap-2 flex-wrap">
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">API Credits</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">AI</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle max-w-md">Via Microsoft for Startups (Azure)</td>
+                                    <td class="p-3 align-middle whitespace-nowrap">
+                                        <a href="https://www.microsoft.com/en-us/startups/ai" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-1.5 text-xs font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 whitespace-nowrap">Apply Now</a>
+                                    </td>
+                                </tr>
+                                <!-- Table Row 6: Free Cursor Pro (1 Year) -->
+                                <tr class="border-b border-border transition-colors hover:bg-muted/50">
+                                    <td class="p-3 align-middle">
+                                        <div class="flex items-center gap-3">
+                                            <img class="rounded-md object-contain w-8 h-8" src="logos/cursor.jpeg" width="32" height="32" alt="Free Cursor Pro (1 Year) logo"/>
+                                            <a href="https://www.cursor.com/students" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Free Cursor Pro (1 Year)</a>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle">$240</td>
+                                    <td class="p-3 align-middle">
+                                        <div class="flex gap-2 flex-wrap">
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">AI</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle max-w-md">Sign up with .edu email</td>
+                                    <td class="p-3 align-middle whitespace-nowrap">
+                                        <a href="https://www.cursor.com/students" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-1.5 text-xs font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 whitespace-nowrap">Apply Now</a>
+                                    </td>
+                                </tr>
+                                <!-- Table Row 7: Google Veo 3 AI Video Generator -->
+                                <tr class="border-b border-border transition-colors hover:bg-muted/50">
+                                    <td class="p-3 align-middle">
+                                        <div class="flex items-center gap-3">
+                                            <img class="rounded-md object-contain w-10 h-10" src="logos/google.jpeg" width="40" height="40" alt="Google Veo 3 AI Video Generator logo"/>
+                                            <a href="https://one.google.com/about/google-ai-plans/" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Google Veo 3 AI Video Generator</a>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle">$240/year</td>
+                                    <td class="p-3 align-middle">
+                                        <div class="flex gap-2 flex-wrap">
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">AI</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Video Generation</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Productivity</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle max-w-md">Free via Google AI Pro for students through finals 2026</td>
+                                    <td class="p-3 align-middle whitespace-nowrap">
+                                        <a href="https://one.google.com/about/google-ai-plans/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-1.5 text-xs font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 whitespace-nowrap">Apply Now</a>
+                                    </td>
+                                </tr>
+                                <!-- Table Row 8: Screen Studio -->
+                                <tr class="border-b border-border transition-colors hover:bg-muted/50">
+                                    <td class="p-3 align-middle">
+                                        <div class="flex items-center gap-3">
+                                            <img class="rounded-md object-contain w-10 h-10" src="logos/screenstudio.jpeg" width="40" height="40" alt="Screen Studio logo"/>
+                                            <a href="https://screen.studio/license/request-educational-discount?aff=9mm0pn" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Screen Studio</a>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle">$100+</td>
+                                    <td class="p-3 align-middle">
+                                        <div class="flex gap-2 flex-wrap">
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Productivity</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Video Creation</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle max-w-md">40% off with student email</td>
+                                    <td class="p-3 align-middle whitespace-nowrap">
+                                        <a href="https://screen.studio/license/request-educational-discount?aff=9mm0pn" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-1.5 text-xs font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 whitespace-nowrap">Apply Now</a>
+                                    </td>
+                                </tr>
+                                <!-- Table Row 9: Free Notion Plus w/ AI -->
+                                <tr class="border-b border-border transition-colors hover:bg-muted/50">
+                                    <td class="p-3 align-middle">
+                                        <div class="flex items-center gap-3">
+                                            <img class="rounded-md object-contain w-10 h-10" src="logos/notion.png" width="40" height="40" alt="Free Notion Plus w/ AI logo"/>
+                                            <a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Free Notion Plus w/ AI</a>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle"></td>
+                                    <td class="p-3 align-middle">
+                                        <div class="flex gap-2 flex-wrap">
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Productivity</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">AI</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle max-w-md">Via Github Student Dev Pack</td>
+                                    <td class="p-3 align-middle whitespace-nowrap">
+                                        <a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-1.5 text-xs font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 whitespace-nowrap">Apply Now</a>
+                                    </td>
+                                </tr>
+                                <!-- Table Row 10: Free Figma Pro -->
+                                <tr class="border-b border-border transition-colors hover:bg-muted/50">
+                                    <td class="p-3 align-middle">
+                                        <div class="flex items-center gap-3">
+                                            <img class="rounded-md object-contain w-10 h-10" src="logos/figma.avif" width="40" height="40" alt="Free Figma Pro logo"/>
+                                            <a href="https://www.figma.com/education/" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Free Figma Pro</a>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle">$144/year</td>
+                                    <td class="p-3 align-middle">
+                                        <div class="flex gap-2 flex-wrap">
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Design</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">AI</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle max-w-md">Sign up with .edu email</td>
+                                    <td class="p-3 align-middle whitespace-nowrap">
+                                        <a href="https://www.figma.com/education/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-1.5 text-xs font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 whitespace-nowrap">Apply Now</a>
+                                    </td>
+                                </tr>
+                                <!-- Table Row 11: Free Domains (Name.com) -->
+                                <tr class="border-b border-border transition-colors hover:bg-muted/50">
+                                    <td class="p-3 align-middle">
+                                        <div class="flex items-center gap-3">
+                                            <img class="rounded-md object-contain w-10 h-10" src="logos/name.webp" width="40" height="40" alt="Free Domains (Name.com) logo"/>
+                                            <a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Free Domains (Name.com)</a>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle"></td>
+                                    <td class="p-3 align-middle">
+                                        <div class="flex gap-2 flex-wrap">
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Startups</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Web Infrastructure</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle max-w-md">.live, .software, .studio, etc.</td>
+                                    <td class="p-3 align-middle whitespace-nowrap">
+                                        <a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-1.5 text-xs font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 whitespace-nowrap">Apply Now</a>
+                                    </td>
+                                </tr>
+                                <!-- Table Row 12: Free Domain (Namecheap) -->
+                                <tr class="border-b border-border transition-colors hover:bg-muted/50">
+                                    <td class="p-3 align-middle">
+                                        <div class="flex items-center gap-3">
+                                            <img class="rounded-md object-contain w-10 h-10" src="logos/namecheap.svg" width="40" height="40" alt="Free Domain (Namecheap) logo"/>
+                                            <a href="https://nc.me/landing/github" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Free Domain (Namecheap)</a>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle"></td>
+                                    <td class="p-3 align-middle">
+                                        <div class="flex gap-2 flex-wrap">
+                                            <span class="px-2 py-1 bg-yellow-200 text-yellow-800 rounded-md text-xs">NEW</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Web Infrastructure</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Startups</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle max-w-md">.me only, free with Github Student Dev Pack</td>
+                                    <td class="p-3 align-middle whitespace-nowrap">
+                                        <a href="https://nc.me/landing/github" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-1.5 text-xs font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 whitespace-nowrap">Apply Now</a>
+                                    </td>
+                                </tr>
+                                <!-- Table Row 13: Free Heroku Hosting (2 Years) -->
+                                <tr class="border-b border-border transition-colors hover:bg-muted/50">
+                                    <td class="p-3 align-middle">
+                                        <div class="flex items-center gap-3">
+                                            <img class="rounded-md object-contain w-10 h-10" src="logos/heroku.webp" width="40" height="40" alt="Free Heroku Hosting (2 Years) logo"/>
+                                            <a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Free Heroku Hosting (2 Years)</a>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle">$312</td>
+                                    <td class="p-3 align-middle">
+                                        <div class="flex gap-2 flex-wrap">
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Web Infrastructure</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Startups</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle max-w-md">2 years of hosting via Github Student Dev Pack</td>
+                                    <td class="p-3 align-middle whitespace-nowrap">
+                                        <a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-1.5 text-xs font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 whitespace-nowrap">Apply Now</a>
+                                    </td>
+                                </tr>
+                                <!-- Table Row 14: Free Perplexity Pro (1 Month) -->
+                                <tr class="border-b border-border transition-colors hover:bg-muted/50">
+                                    <td class="p-3 align-middle">
+                                        <div class="flex items-center gap-3">
+                                            <img class="rounded-md object-contain w-10 h-10" src="logos/perplexity.png" width="40" height="40" alt="Free Perplexity Pro (1 Month) logo"/>
+                                            <a href="https://plex.it/referrals/BNJ8UCZW" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Free Perplexity Pro (1 Month)</a>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle">$20</td>
+                                    <td class="p-3 align-middle">
+                                        <div class="flex gap-2 flex-wrap">
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">AI</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Productivity</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle max-w-md">Sign up with .edu email</td>
+                                    <td class="p-3 align-middle whitespace-nowrap">
+                                        <a href="https://plex.it/referrals/BNJ8UCZW" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-1.5 text-xs font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 whitespace-nowrap">Apply Now</a>
+                                    </td>
+                                </tr>
+                                <!-- Table Row 15: Microsoft for Startups -->
+                                <tr class="border-b border-border transition-colors hover:bg-muted/50">
+                                    <td class="p-3 align-middle">
+                                        <div class="flex items-center gap-3">
+                                            <img class="rounded-md object-contain w-10 h-10" src="logos/microsoft.webp" width="40" height="40" alt="Microsoft for Startups logo"/>
+                                            <a href="https://www.microsoft.com/en-us/startups" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Microsoft for Startups</a>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle"></td>
+                                    <td class="p-3 align-middle">
+                                        <div class="flex gap-2 flex-wrap">
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">API Credits</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">AI</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Startups</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Web Infrastructure</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle max-w-md"></td>
+                                    <td class="p-3 align-middle whitespace-nowrap">
+                                        <a href="https://www.microsoft.com/en-us/startups" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-1.5 text-xs font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 whitespace-nowrap">Apply Now</a>
+                                    </td>
+                                </tr>
+                                <!-- Table Row 16: Github Student Developer Pack -->
+                                <tr class="border-b border-border transition-colors hover:bg-muted/50">
+                                    <td class="p-3 align-middle">
+                                        <div class="flex items-center gap-3">
+                                            <img class="rounded-md object-contain w-10 h-10" src="logos/github.png" width="40" height="40" alt="Github Student Developer Pack logo"/>
+                                            <a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Github Student Developer Pack</a>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle"></td>
+                                    <td class="p-3 align-middle">
+                                        <div class="flex gap-2 flex-wrap">
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">API Credits</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">AI</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Startups</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Web Infrastructure</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle max-w-md"></td>
+                                    <td class="p-3 align-middle whitespace-nowrap">
+                                        <a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-1.5 text-xs font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 whitespace-nowrap">Apply Now</a>
+                                    </td>
+                                </tr>
+                                <!-- Table Row 17: Free GPU Credits -->
+                                <tr class="border-b border-border transition-colors hover:bg-muted/50">
+                                    <td class="p-3 align-middle">
+                                        <div class="flex items-center gap-3">
+                                            <img class="rounded-md object-contain w-10 h-10" src="logos/digitalocean.png" width="40" height="40" alt="Free GPU Credits logo"/>
+                                            <a href="https://sammydigitalocean.typeform.com/to/tZXAmt?typeform-source=www.digitalocean.com" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Free GPU Credits</a>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle">$10,000</td>
+                                    <td class="p-3 align-middle">
+                                        <div class="flex gap-2 flex-wrap">
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">GPU</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Web Infrastructure</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">AI</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Startups</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle max-w-md">Sign up via Hatch program</td>
+                                    <td class="p-3 align-middle whitespace-nowrap">
+                                        <a href="https://sammydigitalocean.typeform.com/to/tZXAmt?typeform-source=www.digitalocean.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-1.5 text-xs font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 whitespace-nowrap">Apply Now</a>
+                                    </td>
+                                </tr>
+                                <!-- Table Row 18: Amazon AWS Credits -->
+                                <tr class="border-b border-border transition-colors hover:bg-muted/50">
+                                    <td class="p-3 align-middle">
+                                        <div class="flex items-center gap-3">
+                                            <img class="rounded-md object-contain w-10 h-10" src="logos/amazon-aws.png" width="40" height="40" alt="Amazon AWS Credits logo"/>
+                                            <a href="https://aws.amazon.com/free/offers/" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Amazon AWS Credits</a>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle">$10k+</td>
+                                    <td class="p-3 align-middle">
+                                        <div class="flex gap-2 flex-wrap">
+                                            <span class="px-2 py-1 bg-yellow-200 text-yellow-800 rounded-md text-xs">NEW</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">API Credits</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Web Infrastructure</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Startups</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle max-w-md">$300 without a website, up to $100k if you have a website. Say you&#x27;re &#x27;self-funded&#x27;</td>
+                                    <td class="p-3 align-middle whitespace-nowrap">
+                                        <a href="https://aws.amazon.com/free/offers/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-1.5 text-xs font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 whitespace-nowrap">Apply Now</a>
+                                    </td>
+                                </tr>
+                                <!-- Table Row 19: ElevenLabs -->
+                                <tr class="border-b border-border transition-colors hover:bg-muted/50">
+                                    <td class="p-3 align-middle">
+                                        <div class="flex items-center gap-3">
+                                            <img class="rounded-md object-contain w-10 h-10" src="logos/elevenlabs.png" width="40" height="40" alt="ElevenLabs logo"/>
+                                            <a href="https://www.aiengineerpack.com/" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">ElevenLabs</a>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle">$55</td>
+                                    <td class="p-3 align-middle">
+                                        <div class="flex gap-2 flex-wrap">
+                                            <span class="px-2 py-1 bg-yellow-200 text-yellow-800 rounded-md text-xs">NEW</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">AI</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Voice Generation</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle max-w-md">3 months free with Github Student Dev Pack</td>
+                                    <td class="p-3 align-middle whitespace-nowrap">
+                                        <a href="https://www.aiengineerpack.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-1.5 text-xs font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 whitespace-nowrap">Apply Now</a>
+                                    </td>
+                                </tr>
+                                <!-- Table Row 20: Z Fellows -->
+                                <tr class="border-b border-border transition-colors hover:bg-muted/50">
+                                    <td class="p-3 align-middle">
+                                        <div class="flex items-center gap-3">
+                                            <img class="rounded-md object-contain w-10 h-10" src="logos/zfellows.jpeg" width="40" height="40" alt="Z Fellows logo"/>
+                                            <a href="https://www.zfellows.com/" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Z Fellows</a>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle">$10,000</td>
+                                    <td class="p-3 align-middle">
+                                        <div class="flex gap-2 flex-wrap">
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Fellowship</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Grant</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Mentorship</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle max-w-md">$10k grant &amp; fellowship for young entrepreneurs</td>
+                                    <td class="p-3 align-middle whitespace-nowrap">
+                                        <a href="https://www.zfellows.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-1.5 text-xs font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 whitespace-nowrap">Apply Now</a>
+                                    </td>
+                                </tr>
+                                <!-- Table Row 21: Neo Scholars -->
+                                <tr class="border-b border-border transition-colors hover:bg-muted/50">
+                                    <td class="p-3 align-middle">
+                                        <div class="flex items-center gap-3">
+                                            <img class="rounded-md object-contain w-10 h-10" src="logos/neo.svg" width="40" height="40" alt="Neo Scholars logo"/>
+                                            <a href="https://neo.com/scholars" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Neo Scholars</a>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle">$25,000</td>
+                                    <td class="p-3 align-middle">
+                                        <div class="flex gap-2 flex-wrap">
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Fellowship</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Grant</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Mentorship</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle max-w-md">Fellowship &amp; grant for CS students</td>
+                                    <td class="p-3 align-middle whitespace-nowrap">
+                                        <a href="https://neo.com/scholars" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-1.5 text-xs font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 whitespace-nowrap">Apply Now</a>
+                                    </td>
+                                </tr>
+                                <!-- Table Row 22: Afore Capital Grants -->
+                                <tr class="border-b border-border transition-colors hover:bg-muted/50">
+                                    <td class="p-3 align-middle">
+                                        <div class="flex items-center gap-3">
+                                            <img class="rounded-md object-contain w-10 h-10" src="logos/afore.jpeg" width="40" height="40" alt="Afore Capital Grants logo"/>
+                                            <a href="https://grants.afore.vc/" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Afore Capital Grants</a>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle">$1,000</td>
+                                    <td class="p-3 align-middle">
+                                        <div class="flex gap-2 flex-wrap">
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Fellowship</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Grant</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Mentorship</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle max-w-md">$1,000 non-dilutive grant</td>
+                                    <td class="p-3 align-middle whitespace-nowrap">
+                                        <a href="https://grants.afore.vc/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-1.5 text-xs font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 whitespace-nowrap">Apply Now</a>
+                                    </td>
+                                </tr>
+                                <!-- Table Row 23: Superteam Crypto Grants -->
+                                <tr class="border-b border-border transition-colors hover:bg-muted/50">
+                                    <td class="p-3 align-middle">
+                                        <div class="flex items-center gap-3">
+                                            <img class="rounded-md object-contain w-10 h-10" src="logos/superteam.jpg" width="40" height="40" alt="Superteam Crypto Grants logo"/>
+                                            <a href="https://earn.superteam.fun/grants" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Superteam Crypto Grants</a>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle">up to $10k</td>
+                                    <td class="p-3 align-middle">
+                                        <div class="flex gap-2 flex-wrap">
+                                            <span class="px-2 py-1 bg-yellow-200 text-yellow-800 rounded-md text-xs">NEW</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Fellowship</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Grant</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Crypto</span>
+                                            <span class="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground">Web3</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle max-w-md">grants for building crypto apps (dApps)</td>
+                                    <td class="p-3 align-middle whitespace-nowrap">
+                                        <a href="https://earn.superteam.fun/grants" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-1.5 text-xs font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 whitespace-nowrap">Apply Now</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Submit Resource Button -->
+                    <div class="mt-8 text-center">
+                        <p class="text-sm text-muted-foreground mb-3">Have a resource to share?</p>
+                        <a href="https://forms.gle/LUR21TANaGS8CyHS7" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90">Submit Resource</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="border-t">
+        <div class="max-w-6xl mx-auto px-4 h-12 flex items-center justify-center font-medium">
+            <a href="https://x.com/xourav.js" target="_blank" rel="noopener noreferrer" class="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5">
+                <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>@sourav.js
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -36,6 +36,14 @@
     <title>Free Stuff for College Builders</title>
     <meta name="description" content="Free Stuff for College Builders"/>
     <link rel="icon" href="buildincollege.png"/>
+    <script>
+        // Keyboard shortcut: Ctrl+Shift+A
+        document.addEventListener('keydown', function(e) {
+          if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 's') {
+            window.location.href = 'admin-login.html';
+          }
+        });
+        </script>
 </head>
 <body class="min-h-screen flex flex-col">
     <!-- Header Section -->
@@ -120,7 +128,7 @@
                     </div>
                     <div class="flex gap-4 flex-col">
                         <h1 class="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-regular">
-                            <span class="text-spektr-cyan-50">Free stuff's for University</span>
+                            <span class="text-spektr-cyan-50">Free stuffs for University</span>
                             
                         <span class="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
                             <span class="font-semibold">

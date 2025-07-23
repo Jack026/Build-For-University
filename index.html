@@ -1,234 +1,487 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charSet="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <!-- Preload images for better performance -->
-    <link rel="preload" as="image" href="buildincollege.png"/>
-    <!-- Preload logos used on the page -->
-    <link rel="preload" as="image" href="logos/firecrawl.jpg"/>
-    <link rel="preload" as="image" href="logos/framer.svg"/>
-    <link rel="preload" as="image" href="logos/anthropic-small.png"/>
-    <link rel="preload" as="image" href="logos/rocketship-icon.png"/>
-    <link rel="preload" as="image" href="logos/openai.webp"/>
-    <link rel="preload" as="image" href="logos/cursor.jpeg"/>
-    <link rel="preload" as="image" href="logos/google.jpeg"/>
-    <link rel="preload" as="image" href="logos/screenstudio.jpeg"/>
-    <link rel="preload" as="image" href="logos/notion.png"/>
-    <link rel="preload" as="image" href="logos/figma.avif"/>
-    <link rel="preload" as="image" href="logos/name.webp"/>
-    <link rel="preload" as="image" href="logos/namecheap.svg"/>
-    <link rel="preload" as="image" href="logos/heroku.webp"/>
-    <link rel="preload" as="image" href="logos/perplexity.png"/>
-    <link rel="preload" as="image" href="logos/microsoft.webp"/>
-    <link rel="preload" as="image" href="logos/github.png"/>
-    <link rel="preload" as="image" href="logos/digitalocean.png"/>
-    <link rel="preload" as="image" href="logos/amazon-aws.png"/>
-    <link rel="preload" as="image" href="logos/elevenlabs.png"/>
-    <link rel="preload" as="image" href="logos/zfellows.jpeg"/>
-    <link rel="preload" as="image" href="logos/neo.svg"/>
-    <link rel="preload" as="image" href="logos/afore.jpeg"/>
-    <link rel="preload" as="image" href="logos/superteam.jpg"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Free Stuff for College Builders | Build for University</title>
+  <meta name="description" content="The ultimate collection of free resources, tools, and opportunities for college innovators. Build your dreams without limits."/>
+  <link rel="icon" href="buildincollege.png"/>
+  
+  <style>
+    /*
+    ============================================
+    CSS Variables & Global Styles
+    ============================================
+    */
+    :root {
+      --primary-color: #06b6d4; /* A vibrant cyan for highlights */
+      --primary-hover: #0891b2;
+      --bg-color: #0c1427; /* A deep, dark blue for the background */
+      --text-color: #e2e8f0; /* Soft white/light gray for text */
+      --card-bg: #1a2336;
+      --border-color: rgba(255, 255, 255, 0.1);
+      --shadow-color: rgba(6, 182, 212, 0.2);
+    }
 
-    <!-- Tailwind CSS CDN for styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    /* A simple CSS Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <title>Free Stuff for College Builders</title>
-    <meta name="description" content="Free Stuff for College Builders"/>
-    <link rel="icon" href="buildincollege.png"/>
-    <script>
-        // Keyboard shortcut: Ctrl+Shift+A
-        document.addEventListener('keydown', function(e) {
-          if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 's') {
-            window.location.href = 'admin-login.html';
-          }
-        });
-        </script>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      overflow-x: hidden; /* Prevent horizontal scroll */
+    }
+
+    /*
+    ============================================
+    Header & Navigation
+    ============================================
+    */
+    header {
+      background: transparent;
+      padding: 1.5rem 2rem;
+      position: absolute;
+      width: 100%;
+      z-index: 100;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-color);
+    }
+
+    .nav-logo img {
+      height: 40px;
+      width: 40px;
+    }
+
+    .nav-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+    
+    .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-color: var(--border-color);
+    }
+
+    /*
+    ============================================
+    Hero Section
+    ============================================
+    */
+    .hero {
+      text-align: center;
+      padding: 12rem 2rem 6rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow: hidden; /* To contain pseudo-elements */
+    }
+    
+    /* Animated background gradient */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 800px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.2), transparent 70%);
+      transform: translateX(-50%);
+      animation: pulse 8s infinite ease-in-out;
+      z-index: -1;
+    }
+
+    @keyframes pulse {
+      0% { transform: translateX(-50%) scale(1); opacity: 0.8; }
+      50% { transform: translateX(-50%) scale(1.2); opacity: 1; }
+      100% { transform: translateX(-50%) scale(1); opacity: 0.8; }
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 6vw, 4.5rem); /* Responsive font size */
+      font-weight: 800;
+      margin: 1.5rem 0;
+      max-width: 800px;
+      line-height: 1.2;
+      animation: slide-up 0.8s 0.2s cubic-bezier(0.25, 1, 0.5, 1) both;
+    }
+
+    .hero-desc {
+      font-size: 1.125rem;
+      max-width: 600px;
+      margin-bottom: 2.5rem;
+      color: #94a3b8; /* Lighter gray for description */
+      animation: slide-up 0.8s 0.4s cubic-bezier(0.25, 1, 0.5, 1) both;
+    }
+    
+    /* Keyframe animations for hero elements */
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slide-up {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /*
+    ============================================
+    Trusted By Section
+    ============================================
+    */
+    .trusted {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      animation: slide-up 0.8s cubic-bezier(0.25, 1, 0.5, 1) both;
+    }
+
+    .trusted-avatars {
+      display: flex;
+    }
+    
+    .trusted-avatars img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 3px solid var(--bg-color);
+      margin-left: -16px; /* Create the overlap effect */
+      transition: transform 0.3s ease;
+    }
+
+    .trusted-avatars img:hover {
+        transform: scale(1.1) translateY(-3px);
+    }
+    
+    .trusted-avatars img:first-child {
+      margin-left: 0;
+    }
+
+    .trusted-stars {
+      color: #f59e0b; /* A warm yellow for stars */
+      font-size: 1.25rem;
+    }
+
+    .trusted-label {
+      font-weight: 500;
+      color: #94a3b8;
+    }
+
+    /*
+    ============================================
+    Call-to-Action Button
+    ============================================
+    */
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--bg-color);
+      background-color: var(--primary-color);
+      border-radius: 12px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      position: relative;
+      overflow: hidden; /* For shine effect */
+      animation: slide-up 0.8s 0.6s cubic-bezier(0.25, 1, 0.5, 1) both;
+    }
+
+    .cta-btn:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-3px);
+    }
+    
+    /* Shine effect on hover */
+    .cta-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        transition: left 0.6s ease;
+    }
+    
+    .cta-btn:hover::before {
+        left: 100%;
+    }
+    
+    .cta-btn svg {
+      transition: transform 0.3s ease;
+    }
+
+    .cta-btn:hover svg {
+      transform: translateX(4px);
+    }
+
+    /*
+    ============================================
+    Scrolling Testimonials Section
+    ============================================
+    */
+    .testimonials-section {
+      padding: 4rem 0;
+      position: relative;
+    }
+    
+    .marquee {
+        width: 100vw;
+        max-width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .marquee-content {
+        display: flex;
+        animation: scroll 30s linear infinite;
+    }
+    
+    .marquee:hover .marquee-content {
+        animation-play-state: paused;
+    }
+
+    @keyframes scroll {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+    }
+    
+    .card {
+      flex-shrink: 0;
+      width: 320px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 0 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--primary-color);
+      color: var(--bg-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .card-user {
+      font-weight: 600;
+      color: var(--text-color);
+    }
+
+    .card-text {
+      font-size: 1rem;
+      color: #cbd5e1;
+    }
+
+    /*
+    ============================================
+    Footer
+    ============================================
+    */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+    
+    .footer-link {
+      color: #94a3b8;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-link:hover {
+      color: var(--primary-color);
+    }
+
+  </style>
 </head>
-<body class="min-h-screen flex flex-col">
-    <!-- Header Section -->
-    <header class="border-b">
-        <nav class="max-w-6xl mx-auto px-4 h-12 flex items-center justify-between">
-            <a class="flex items-center gap-2" href="index.html">
-                <img src="buildincollege.png" alt="Build for University Logo" class="w-8 h-8 rounded-md"/>
-                <span class="font-semibold text-base">Build for University</span>
-            </a>
-            <a class="px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors" href="about.html">About</a>
-        </nav>
-    </header>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <a class="nav-logo" href="index.html">
+        <img src="buildincollege.png" alt="Build for University Logo"/>
+        <span class="nav-title">Build for University</span>
+      </a>
+      <a class="nav-link" href="about.html">About</a>
+    </nav>
+  </header>
 
-    <!-- Main Content Section -->
-    <main class="flex-1">
-        <div class="w-full">
-            <div class="container mx-auto">
-                <div class="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
-                    <div>
-                        <div class="mx-auto flex w-fit flex-col items-center gap-4 sm:flex-row">
-                            <span class="mx-4 inline-flex items-center -space-x-4">
-                                <span class="relative flex shrink-0 overflow-hidden rounded-full size-14 border">
-                                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Random Person 1" class="w-full h-full object-cover">
-                                </span>
-                                <span class="relative flex shrink-0 overflow-hidden rounded-full size-14 border">
-                                    <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Random Person 2" class="w-full h-full object-cover">
-                                </span>
-                                <span class="relative flex shrink-0 overflow-hidden rounded-full size-14 border">
-                                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Indian Student 1" class="w-full h-full object-cover">
-                                </span>
-                                <span class="relative flex shrink-0 overflow-hidden rounded-full size-14 border">
-                                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Random Person 3" class="w-full h-full object-cover">
-                                </span>
-                                <span class="relative flex shrink-0 overflow-hidden rounded-full size-14 border">
-                                    <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Random Person 4" class="w-full h-full object-cover">
-                                </span>
-                                <span class="relative flex shrink-0 overflow-hidden rounded-full size-14 border">
-                                    <img src="\logos\IMG_20240924_002724_784.jpg" alt="Random Person 5" class="w-full h-full object-cover">
-                                </span>
-                            </span>
-                            <div>
-                                <div class="flex items-center gap-1">
-  <!-- 4 full stars -->
-  <svg xmlns="http://www.w3.org/2000/svg" class="size-5 fill-yellow-400 text-yellow-400" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="trusted">
+        <div class="trusted-avatars">
+          <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User Avatar">
+          <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="User Avatar">
+          <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="User Avatar">
+          <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="User Avatar">
+            <img src="logos\IMG_20240924_002724_784.jpg" alt="User Avatar">
+        </div>
+        <div class="trusted-stars">★★★★★</div>
+        <div class="trusted-label">Trusted by 400+ college builders. Next is you.</div>
+      </div>
 
-  <!-- Repeat 3 more full stars -->
-  <svg xmlns="http://www.w3.org/2000/svg" class="size-5 fill-yellow-400 text-yellow-400" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+      <h1 class="hero-title">Free Stuff for University <span style="color:#06b6d4;">Builders</span></h1>
+      
+      <p class="hero-desc">
+        Discover the ultimate collection of free resources, tools, and opportunities tailored for college innovators. Build your dreams without limits.
+      </p>
 
-  <svg xmlns="http://www.w3.org/2000/svg" class="size-5 fill-yellow-400 text-yellow-400" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+      <a href="dashboard.html" class="cta-btn">
+        <span>View Dashboard</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </section>
 
-  <svg xmlns="http://www.w3.org/2000/svg" class="size-5 fill-yellow-400 text-yellow-400" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-
-  <!-- Half star using masking -->
-  <div class="flex items-center gap-1">
-    <!-- Full Yellow Stars -->
-    
-  
-    <!-- Half Star -->
-    <div class="relative size-5">
-      <!-- Gray full star in background -->
-      <svg class="absolute top-0 left-0 size-5 text-gray-300 fill-gray-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round">
-        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
-      </svg>
-  
-      <!-- Yellow half star clipped -->
-      <svg class="absolute top-0 left-0 size-5 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" style="clip-path: inset(0 50% 0 0);">
-        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
-      </svg>
-    </div>
-  
-    <!-- Gray Star -->
-    
-  </div>
-  
-</div>
-
-                                <p class="text-left font-medium text-muted-foreground">Trusted by <!-- -->400<!-- -->+ college builders. Next is you</p>
-                            </div>
-                        </div>
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="marquee">
+            <div class="marquee-content">
+                <!-- Cards are duplicated for a seamless loop -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-avatar">J</div>
+                        <div class="card-user">@Joysankar</div>
                     </div>
-                    <div class="flex gap-4 flex-col">
-                        <h1 class="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-regular">
-                            <span class="text-spektr-cyan-50">Free stuffs for University</span>
-                            
-                        <span class="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
-                            <span class="font-semibold">
-                                <span class="flip-animation">
-                                    <span class="flip-words">
-                                      <span>builders</span>
-                                      <span>creators</span>
-                                      <span>innovators</span>
-                                    </span>
-                                  </span>
-                            </span>
-                        </span>
+                    <div class="card-text">"This website is super helpful, a must-have for every student builder out there. Found so many great tools!"</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-avatar">K</div>
+                        <div class="card-user">@krayondev</div>
+                    </div>
+                    <div class="card-text">"This platform is a complete game-changer for students. So many grants and credits in one place."</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-avatar">S</div>
+                        <div class="card-user">@shivambuilds</div>
+                    </div>
+                    <div class="card-text">"Holy moly, I wish I had this when I first started building. An incredible collection of free resources."</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-avatar">A</div>
+                        <div class="card-user">@Aarav</div>
+                    </div>
+                    <div class="card-text">"Finally, a centralized hub for all the student packs and deals. This saved me hours of searching."</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-avatar">P</div>
+                        <div class="card-user">@Priya</div>
+                    </div>
+                    <div class="card-text">"The best-kept secret for student developers and entrepreneurs. Absolutely invaluable."</div>
+                </div>
 
-                        <style>
-                            .flip-animation {
-                                height: 1em;
-                                overflow: hidden;
-                                display: inline-block;
-                                position: relative;
-                            }
-                            
-                            .flip-words {
-                                display: inline-block;
-                                animation: flipWords 6s linear infinite;
-                            }
-                            
-                            .flip-words span {
-                                display: block;
-                                height: 1em;
-                            }
-                            
-                            @keyframes flipWords {
-                                0% { transform: translateY(0%); }
-                                33.33% { transform: translateY(-100%); }
-                                66.66% { transform: translateY(-200%); }
-                                100% { transform: translateY(0%); }
-                            }
-                            </style>
-                            
-                            
-                        </h1>
-                        <p class="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">Discover the ultimate collection of free resources, tools, and opportunities tailored for college innovators. Build your dreams without limits.</p>
+                <!-- Duplicate set for looping -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-avatar">J</div>
+                        <div class="card-user">@Joysankar</div>
                     </div>
-                    <div>
-                        <a href="dashboard.html" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-black text-white hover:bg-black h-11 rounded-md px-8 gap-4 hover:scale-105 transition-transform">
-                            View Dashboard
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right w-4 h-4" aria-hidden="true"><path d="M18 8L22 12L18 16"></path><path d="M2 12H22"></path></svg>
-                        </a>
+                    <div class="card-text">"This website is super helpful, a must-have for every student builder out there. Found so many great tools!"</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-avatar">K</div>
+                        <div class="card-user">@krayondev</div>
                     </div>
-                    <div>
-                        <div class="w-full max-w-4xl mx-auto">
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                <div class="bg-white border shadow-sm rounded-xl p-6 text-center hover:shadow-md transition-all duration-300 hover:scale-105">
-                                    <div class="flex flex-col items-center space-y-4">
-                                        <span class="relative flex shrink-0 overflow-hidden rounded-full size-14 ring-2 ring-gray-100">
-                                            <span class="flex h-full w-full items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600 text-white font-semibold">J</span>
-                                        </span>
-                                        <div class="space-y-2">
-                                            <p class="text-gray-700 font-medium leading-relaxed">&quot;this website is super helpful&quot;</p>
-                                            <p class="text-sm text-gray-500 font-medium">@Joysankar</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-white border shadow-sm rounded-xl p-6 text-center hover:shadow-md transition-all duration-300 hover:scale-105">
-                                    <div class="flex flex-col items-center space-y-4">
-                                        <span class="relative flex shrink-0 overflow-hidden rounded-full size-14 ring-2 ring-gray-100">
-                                            <span class="flex h-full w-full items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600 text-white font-semibold">K</span>
-                                        </span>
-                                        <div class="space-y-2">
-                                            <p class="text-gray-700 font-medium leading-relaxed">&quot;This platform is a game-changer for students&quot;</p>
-                                            <p class="text-sm text-gray-500 font-medium">@krayondev</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-white border shadow-sm rounded-xl p-6 text-center hover:shadow-md transition-all duration-300 hover:scale-105">
-                                    <div class="flex flex-col items-center space-y-4">
-                                        <span class="relative flex shrink-0 overflow-hidden rounded-full size-14 ring-2 ring-gray-100">
-                                            <span class="flex h-full w-full items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600 text-white font-semibold">S</span>
-                                        </span>
-                                        <div class="space-y-2">
-                                            <p class="text-gray-700 font-medium leading-relaxed">&quot;holy moly&quot;</p>
-                                            <p class="text-sm text-gray-500 font-medium">@shivambuilds</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="card-text">"This platform is a complete game-changer for students. So many grants and credits in one place."</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-avatar">S</div>
+                        <div class="card-user">@shivambuilds</div>
                     </div>
+                    <div class="card-text">"Holy moly, I wish I had this when I first started building. An incredible collection of free resources."</div>
+                </div>
+                 <div class="card">
+                    <div class="card-header">
+                        <div class="card-avatar">A</div>
+                        <div class="card-user">@Aarav</div>
+                    </div>
+                    <div class="card-text">"Finally, a centralized hub for all the student packs and deals. This saved me hours of searching."</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-avatar">P</div>
+                        <div class="card-user">@Priya</div>
+                    </div>
+                    <div class="card-text">"The best-kept secret for student developers and entrepreneurs. Absolutely invaluable."</div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
+  </main>
 
-    <!-- Footer Section -->
-    <footer class="border-t">
-        <div class="max-w-6xl mx-auto px-4 h-12 flex items-center justify-center font-medium">
-            <a href="https://x.com/xourav.js" target="_blank" rel="noopener noreferrer" class="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5">
-                <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>@sourav.js
-            </a>
-        </div>
-    </footer>
+  <!-- Footer -->
+  <footer>
+    <a href="https://x.com/xourav_js" target="_blank" rel="noopener noreferrer" class="footer-link">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+      Created by @sourav.js
+    </a>
+  </footer>
 </body>
 </html>

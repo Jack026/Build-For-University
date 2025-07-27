@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Free Stuff for College Builders | Build for University</title>
-  <meta name="description" content="The ultimate collection of free resources, tools, and opportunities for college innovators."/>
+  <title>Dashboard | Free Stuff for College Builders</title>
+  <meta name="description" content="A curated dashboard of free resources, tools, and opportunities for college students who are building projects."/>
   <link rel="icon" href="buildincollege.png"/>
   <style>
     :root {
@@ -25,8 +25,6 @@
       line-height: 1.7;
       overflow-x: hidden;
     }
-
-    /* iOS-Style Floating Header */
     header {
       position: fixed;
       top: 1.5rem;
@@ -37,83 +35,236 @@
       background: rgba(22, 22, 22, 0.4);
       backdrop-filter: blur(24px) saturate(180%);
       -webkit-backdrop-filter: blur(24px) saturate(180%);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--border-color);
       border-radius: 9999px;
       padding: 0.5rem;
       display: flex;
+      justify-content: space-between;
       align-items: center;
       z-index: 1000;
-      transition: all 0.3s ease;
     }
-
-    .nav-logo {
+    .nav-logo { display: flex; align-items: center; justify-content: center; background-color: rgba(255, 255, 255, 0.1); border-radius: 50%; width: 40px; height: 40px; flex-shrink: 0; }
+    .nav-logo img { width: 24px; height: 24px; }
+    .nav-center { flex-grow: 1; display: flex; justify-content: center; }
+    .nav-links { display: flex; gap: 0.5rem; }
+    .nav-links a { padding: 0.5rem 1rem; color: var(--muted-text-color); text-decoration: none; font-weight: 600; font-size: 0.9rem; border-radius: 9999px; transition: color 0.3s, background-color 0.3s; }
+    .nav-links a:hover { color: white; background-color: rgba(255, 255, 255, 0.05); }
+    .nav-links a.active { color: white; background-color: rgba(255, 255, 255, 0.1); }
+    .header-right { display: flex; align-items: center; gap: 0.5rem; }
+    .search-trigger {
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
       width: 40px;
       height: 40px;
-      flex-shrink: 0;
-      margin-right: 1.5rem;
+      background: transparent;
+      border: none;
+      border-radius: 50%;
+      color: var(--muted-text-color);
+      cursor: pointer;
+      transition: color 0.3s, background-color 0.3s;
     }
-    .nav-logo img {
-      width: 24px;
-      height: 24px;
-    }
+    .search-trigger:hover { color: white; background-color: rgba(255, 255, 255, 0.05); }
 
-    .nav-center {
-      flex: 1;
-      display: flex;
-      justify-content: center;
+    /* --- Custom Hamburger Button --- */
+    .mobile-menu-trigger {
+      display: none;
       align-items: center;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 0.5rem;
       justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      position: relative;
+      transition: background 0.2s;
+      padding: 0;
+    }
+    .mobile-menu-trigger:hover {
+      background-color: rgba(255,255,255,0.18);
+    }
+    .hamburger {
+      display: flex;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .hamburger-line {
+      width: 16px;
+      height: 2.5px;
+      background: var(--text-color);
+      border-radius: 2px;
+      margin: 2.5px 0;
+      transition: all 0.3s;
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .nav-center { display: none; }
+      .mobile-menu-trigger {
+        display: flex;
+      }
     }
 
-    .nav-links a {
-      padding: 0.5rem 1rem;
+    /* --- Dropdown inside Hamburger --- */
+    .mobile-menu-dropdown {
+      display: none;
+      position: absolute;
+      top: 48px;
+      right: 0;
+      min-width: 180px;
+      background: rgba(2, 8, 20, 0.98);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(6,182,212,0.10);
+      z-index: 2001;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 0.5rem 0;
+      animation: fade-in-down 0.2s;
+    }
+    .mobile-menu-dropdown.show {
+      display: flex;
+    }
+    .mobile-menu-dropdown a {
       color: var(--muted-text-color);
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.9rem;
-      border-radius: 9999px;
-      transition: color 0.3s ease, background-color 0.3s ease;
+      font-size: 1rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+      text-align: left;
+      background: none;
+      border: none;
+      outline: none;
+      display: block;
     }
-    .nav-links a:hover {
-      color: white;
-      background-color: rgba(255, 255, 255, 0.05);
+    .mobile-menu-dropdown a:hover, .mobile-menu-dropdown a.active {
+      color: var(--primary-color);
+      background: rgba(6,182,212,0.08);
     }
-    .nav-links a.active {
-      color: white;
-      background-color: rgba(255, 255, 255, 0.1);
+    .mobile-menu-dropdown .dropdown-divider {
+      height: 1px;
+      background: var(--border-color);
+      margin: 0.25rem 0;
+      border: none;
     }
 
-    .nav-cta {
-      display: none !important;
-    }
-    
-    /*
-    ============================================
-    Mobile Menu & Overlay
-    ============================================
-    */
-    .mobile-menu-trigger {
+    /* --- Search Bar at Top (search out bar) --- */
+    .search-bar-top {
       display: none;
-      background-color: rgba(255, 255, 255, 0.1);
-      border: none;
+      position: sticky;
+      top: 5.5rem;
+      left: 0;
+      right: 0;
+      z-index: 900;
+      width: 100%;
+      background: rgba(22, 22, 22, 0.7);
+      backdrop-filter: blur(18px) saturate(180%);
+      -webkit-backdrop-filter: blur(18px) saturate(180%);
+      border: 1px solid var(--border-color);
       border-radius: 9999px;
-      padding: 0.75rem 1rem;
-      color: white;
-      font-weight: 600;
-      cursor: pointer;
+      margin: 0 auto 2rem auto;
+      max-width: 700px;
+      box-shadow: 0 4px 24px 0 rgba(6,182,212,0.08);
+      padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      animation: fade-in-down 0.3s;
     }
-    
+    .search-bar-top.active {
+      display: flex;
+    }
+    @keyframes fade-in-down {
+      from { opacity: 0; transform: translateY(-10px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .search-bar-input {
+      flex: 1 1 0%;
+      min-width: 0;
+      padding: 0.75rem 1.25rem;
+      background-color: rgba(0, 0, 0, 0.18);
+      border: 1px solid var(--border-color);
+      border-radius: 9999px;
+      color: var(--text-color);
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px 0 rgba(6,182,212,0.04);
+    }
+    .search-bar-input:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 3px var(--shadow-color); }
+    .search-bar-input::placeholder { color: var(--muted-text-color); }
+    .search-bar-close {
+      background: rgba(255,255,255,0.08);
+      border: none;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      color: var(--muted-text-color);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 0.5rem;
+      font-size: 1.2rem;
+      transition: background 0.2s, color 0.2s;
+      flex-shrink: 0;
+    }
+    .search-bar-close:hover {
+      background: rgba(255,255,255,0.18);
+      color: var(--primary-color);
+    }
+    .search-bar-top .search-icon {
+      margin-right: 0.5rem;
+      color: var(--primary-color);
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @media (max-width: 768px) {
+      .search-bar-top {
+        top: 4.5rem;
+        max-width: 98vw;
+        padding: 0.5rem 0.5rem;
+      }
+    }
+
+    .search-overlay {
+        position: fixed; inset: 0;
+        background: rgba(12, 20, 39, 0.6);
+        backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+        z-index: 2000;
+        display: flex; justify-content: center;
+        padding-top: 15vh;
+        opacity: 0; visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .search-overlay.active { opacity: 1; visibility: visible; }
+    .search-modal { width: 100%; max-width: 600px; }
+    .search-modal-input {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        background-color: rgba(0, 0, 0, 0.2);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        color: var(--text-color);
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+    .search-modal-input:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 3px var(--shadow-color); }
+    .search-modal-input::placeholder { color: var(--muted-text-color); }
     .mobile-menu-overlay {
         position: fixed;
         inset: 0;
@@ -130,12 +281,10 @@
         visibility: hidden;
         transition: opacity 0.4s ease, visibility 0.4s ease;
     }
-    
     .mobile-menu-overlay.active {
         opacity: 1;
         visibility: visible;
     }
-    
     .mobile-menu-overlay a {
         font-size: 1.5rem;
         font-weight: 700;
@@ -147,7 +296,6 @@
     .mobile-menu-overlay a:hover, .mobile-menu-overlay a.active {
       color: white;
     }
-
     .mobile-menu-close {
         position: absolute;
         top: 2rem;
@@ -163,17 +311,14 @@
         align-items: center;
         justify-content: center;
     }
-    
     @media (max-width: 768px) {
       .nav-links, .nav-cta {
         display: none !important;
       }
       .mobile-menu-trigger {
-        display: block;
+        display: flex;
       }
     }
-
-    /* Dashboard section styles */
     main {
       padding: 6.5rem 1.5rem 3rem 1.5rem;
     }
@@ -309,6 +454,7 @@
   </style>
 </head>
 <body>
+  
   <header>
     <a class="nav-logo" href="index.html" title="Home">
       <img src="buildincollege.png" alt="Build for University Logo"/>
@@ -316,21 +462,54 @@
     <div class="nav-center">
       <nav class="nav-links">
         <a href="index.html">Home</a>
-        <a href="dashboard.html"class="active">Dashboard</a>
+        <a href="dashboard.html">Dashboard</a>
         <a href="about.html">About</a>
       </nav>
     </div>
-    <button class="mobile-menu-trigger" aria-label="Open menu">
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
-    </button>
+    <div class="header-right">
+      <button class="search-trigger" aria-label="Open search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </button>
+      <!-- Custom Hamburger Button with Dropdown -->
+      <div style="position:relative;">
+        <button class="mobile-menu-trigger" aria-label="Open menu" id="mobileMenuTriggerBtn">
+          <span class="hamburger">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </span>
+        </button>
+        <div class="mobile-menu-dropdown" id="mobileMenuDropdown">
+          <a href="index.html">Home</a>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="about.html">About</a>
+          <hr class="dropdown-divider"/>
+          <a href="https://forms.gle/LUR21TANaGS8CyHS7" target="_blank">Submit Resource</a>
+        </div>
+      </div>
+    </div>
   </header>
+
   <div class="mobile-menu-overlay">
-    <button class="mobile-menu-close" aria-label="Close menu">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    <!-- Mobile menu links remain here -->
+  </div>
+
+  <!-- Search Bar at Top (appears only after search, not at normal dashboard) -->
+  <div class="search-bar-top" id="searchBarTop" style="display:none;">
+    <span class="search-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    </span>
+    <input type="text" id="searchBarInput" class="search-bar-input" placeholder="Search resources...">
+    <button class="search-bar-close" id="searchBarClose" aria-label="Clear search">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 6l8 8M14 6l-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
-    <a href="index.html">Home</a>
-    <a href="dashboard.html"class="active">Dashboard</a>
-    <a href="about.html">About</a>
+  </div>
+
+  <!-- NEW Search Overlay HTML -->
+  <div class="search-overlay">
+    <div class="search-modal">
+        <input type="text" id="searchInput" placeholder="Search resources..." class="search-modal-input">
+    </div>
   </div>
 
   <main>
@@ -593,40 +772,162 @@
       <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
       Created by @sourav.js
     </a>
+    
   </footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // --- Navigation Logic (unchanged) ---
       const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-      
-      // Desktop nav
       const desktopLinks = document.querySelectorAll('.nav-links a');
       desktopLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-          link.classList.add('active');
+        if (link.getAttribute('href').includes(currentPage)) link.classList.add('active');
+      });
+
+      // Hamburger dropdown logic
+      const menuTrigger = document.getElementById('mobileMenuTriggerBtn');
+      const menuDropdown = document.getElementById('mobileMenuDropdown');
+      // Close dropdown if click outside
+      document.addEventListener('click', (e) => {
+        if (menuDropdown.classList.contains('show')) {
+          if (!menuDropdown.contains(e.target) && !menuTrigger.contains(e.target)) {
+            menuDropdown.classList.remove('show');
+          }
         }
       });
-      
-      // Mobile nav
-      const mobileLinks = document.querySelectorAll('.mobile-menu-overlay a');
-      mobileLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-          link.classList.add('active');
+      menuTrigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menuDropdown.classList.toggle('show');
+        // Highlight current page
+        const links = menuDropdown.querySelectorAll('a');
+        links.forEach(link => {
+          if (link.getAttribute('href') && link.getAttribute('href').replace(/^\.\/|\/$/g, '') === currentPage.replace(/^\.\/|\/$/g, '')) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      });
+
+      // --- Search Logic with Top Bar (only after search) ---
+      const searchTrigger = document.querySelector('.search-trigger');
+      const searchOverlay = document.querySelector('.search-overlay');
+      const searchInput = document.getElementById('searchInput');
+      const resourceCards = document.querySelectorAll('.resource-card');
+      const searchBarTop = document.getElementById('searchBarTop');
+      const searchBarInput = document.getElementById('searchBarInput');
+      const searchBarClose = document.getElementById('searchBarClose');
+      const dashboardHeader = document.querySelector('.dashboard-header');
+
+      // Helper: filter resources
+      function filterResources(term) {
+        const searchTerm = term.trim().toLowerCase();
+        let anyVisible = false;
+        resourceCards.forEach(card => {
+          const resourceName = card.querySelector('h3').textContent.toLowerCase();
+          if (resourceName.includes(searchTerm)) {
+            card.style.display = 'flex';
+            anyVisible = true;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        return anyVisible;
+      }
+
+      // Open search overlay
+      const openSearch = () => {
+        searchOverlay.classList.add('active');
+        searchInput.value = '';
+        searchInput.focus();
+      };
+
+      // Close search overlay
+      const closeSearch = () => {
+        searchOverlay.classList.remove('active');
+        searchInput.value = '';
+      };
+
+      // Show top search bar with term
+      function showTopSearchBar(term) {
+        searchBarInput.value = term;
+        searchBarTop.style.display = 'flex';
+        searchBarTop.classList.add('active');
+        // Optionally, scroll to top of dashboard
+        if (dashboardHeader) {
+          dashboardHeader.scrollIntoView({behavior: 'smooth', block: 'start'});
+        }
+        searchBarInput.focus();
+      }
+
+      // Hide top search bar and reset dashboard
+      function hideTopSearchBarAndReset() {
+        searchBarTop.style.display = 'none';
+        searchBarTop.classList.remove('active');
+        searchBarInput.value = '';
+        // Show all cards
+        resourceCards.forEach(card => {
+          card.style.display = 'flex';
+        });
+      }
+
+      // --- Event Listeners ---
+
+      // Open search overlay
+      searchTrigger.addEventListener('click', openSearch);
+
+      // Close overlay by clicking background
+      searchOverlay.addEventListener('click', (e) => {
+        if (e.target === searchOverlay) {
+          closeSearch();
         }
       });
 
-      // Mobile menu toggle
-      const menuTrigger = document.querySelector('.mobile-menu-trigger');
-      const menuOverlay = document.querySelector('.mobile-menu-overlay');
-      const menuClose = document.querySelector('.mobile-menu-close');
-
-      menuTrigger.addEventListener('click', () => {
-        menuOverlay.classList.add('active');
+      // When user presses Enter in overlay, show top bar and filter
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          const term = searchInput.value;
+          closeSearch();
+          if (term.trim() !== '') {
+            filterResources(term);
+            showTopSearchBar(term);
+          }
+        }
       });
 
-      menuClose.addEventListener('click', () => {
-        menuOverlay.classList.remove('active');
+      // Keyboard shortcuts
+      window.addEventListener('keydown', (e) => {
+        // Open with Cmd+K or Ctrl+K
+        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+          e.preventDefault();
+          openSearch();
+        }
+        // Close with Escape key
+        if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
+          closeSearch();
+        }
       });
+
+      // Top search bar input: filter in real time
+      searchBarInput.addEventListener('input', (e) => {
+        const term = e.target.value;
+        filterResources(term);
+      });
+
+      // Top search bar close button: reset dashboard and hide bar
+      searchBarClose.addEventListener('click', () => {
+        hideTopSearchBarAndReset();
+      });
+
+      // Also allow pressing Escape in top search bar to clear and reset
+      searchBarInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          hideTopSearchBarAndReset();
+        }
+      });
+
+      // On page load, ensure search bar is hidden
+      hideTopSearchBarAndReset();
     });
   </script>
 </body>
